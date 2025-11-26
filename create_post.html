@@ -3,20 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Post</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <style>
-    body {
-        margin: 0;
-        padding: 20px;     /* ما يزيد المساحة */
-        box-sizing: border-box;
-        background: #f2f3f5;
-    }
-</style>
-
+    <link rel="stylesheet" href="post.css">
 </head>
-<body class="bg-light">
 
+<body class="create-post">
 <div class="container mt-5">
     <h2>Create New Post</h2>
 
@@ -25,6 +15,7 @@
             <label class="form-label">Post Title</label>
             <input type="text" id="title" class="form-control" required>
         </div>
+
 
         <div class="mb-3">
             <label class="form-label">Post Content</label>
@@ -41,46 +32,48 @@
 
 //// ============================  الزبده   =========================
 
-
-// اتاكدو من مسار الملف انه موجود ب المكان نفسه و نفس الاسم
-const WP_URL = "http://localhost/wordpress/wp-json/wp/v2/posts";
+//البورت حقت صناعه البوستات 
+const WP_URL = "http://127.0.0.1/wordpress/wp-json/wp/v2/posts";
 
 //هنا حط اسم اليوزر الي راح تستعمله
-const USERNAME = "اسم اليوزر";
-
+const USERNAME = "ATEF";
 
 //هنا الابلكيشون باس ورد
-const APP_PASS = "مكانم الابلكيشون باسورد";
+const APP_PASS = "JV7hqtncWXQMVtdGQc7FpG0E";
 
 //// ============================  الزبده   =========================
 
+//لو ضغط ببلش يبدا ينفذ 
 document.getElementById("createForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
+// هنا طريقه الرسل ب الجيسون 
     const response = await fetch(WP_URL, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
             "Authorization": "Basic " + btoa(`${USERNAME}:${APP_PASS}`)
         },
+
+//هنا محتوى البوست الي راح يتسوا 
         body: JSON.stringify({
             title: document.getElementById("title").value,
             content: document.getElementById("content").value,
             status: "publish"
         })
     });
-
     const data = await response.json();
 
+// هنا لو تم انشاء البوست يعطيه id + اليرت واذا كانت في مشكله يعطي اليرت للمشكلة 
     if (data.id) {
         document.getElementById("result").innerHTML =
-        `<div class="alert alert-success">Post Created Successfully! ID: ${data.id}</div>`;
+        `<div class="alert alert-success">Post Created: ${data.id}</div>`;
     } else {
         document.getElementById("result").innerHTML =
-        `<div class="alert alert-danger">Failed: ${JSON.stringify(data)}</div>`;
+        `<div class="alert alert-danger">Post Failedto creat: ${JSON.stringify(data)}</div>`;
     }
 });
-</script>
 
+</script>
 </body>
 </html>

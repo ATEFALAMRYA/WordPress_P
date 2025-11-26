@@ -1,4 +1,6 @@
 <?php
+
+// هنا شرط الدخول للداش بورد ما تقدر تخش الداش بورد لو ما سويت تسجل دخول
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
@@ -13,25 +15,27 @@ $user = $_SESSION['user_name'];
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
-
 <style>
-
 body {
     margin: 0;
     padding: 0;
     font-family: "Segoe UI", Arial, sans-serif;
     background: #1f1f1f;
     color: #fff;
-    overflow: hidden;
 }
 
 .top-bar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 15px 25px;
     background: #242424;
     border-bottom: 2px solid #333;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
 }
 
 .user-icon {
@@ -52,6 +56,19 @@ body {
     object-fit: cover;
 }
 
+.logout-btn {
+    background: #fa3333ff;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 800;
+    transition: 0.2s ease;
+}
+
+.logout-btn:hover {
+    background: #bd2f2fff;
+}
 
 .layout {
     display: flex;
@@ -90,16 +107,14 @@ body {
 }
 
 .content-box {
-    background: #2b2b2b; 
+    background: #2b2b2b;
     padding: 15px;
     box-shadow: 0 5px 25px rgba(0,0,0,0.4);
-    overflow: hidden;
 }
 
 h2 {
     color: #fa3333ff;
     font-size: 32px;
-    margin-bottom: 10px;
 }
 
 p {
@@ -107,37 +122,9 @@ p {
     font-size: 19px;
 }
 
-.top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 25px;
-    background: #242424;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-}
-
-.logout-btn {
-    background: #fa3333ff;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.2s ease;
-}
-
-.logout-btn:hover {
-    background: #bd2f2fff;
-}
-
 </style>
 
 </head>
-
 <body>
 
 <div class="top-bar">
@@ -151,27 +138,28 @@ p {
     <a href="logout.php" class="logout-btn">Logout</a>
 </div>
 
-    <div class="layout">
+<div class="layout">
 
-        <div class="sidebar">
-            <button onclick="loadContent('create_post.html')">create post</button>
-            <button onclick="loadContent('all_post.html')">show all post</button>
-        </div>
-
-        <div class="content content-box" id="content-area">
-            <h2>Welcome to your dashboard</h2>
-            <p>Here you can create and display posts</p>
-        </div>
-
+    <div class="sidebar">
+        <button onclick="loadContent('create_post.html')">create post</button>
+        <button onclick="loadContent('all_post.html')">show all post</button>
     </div>
 
-    <script>
+    <div class="content content-box" id="content-area">
+        <h2>Welcome to your dashboard</h2>
+        <p>Here you can create and display posts</p>
+    </div>
 
-         function loadContent(page) {
-            document.getElementById("content-area").innerHTML =
-            '<iframe src="' + page + '" style="width:100%;height:100%;border:0;overflow:hidden;"></iframe>';}
+</div>
 
-    </script>
+<script>
+
+function loadContent(page) {
+    document.getElementById("content-area").innerHTML =
+        `<iframe src="${page}" style="width:100%;height:100%;border:0"></iframe>`;
+}
+
+</script>
 
 </body>
 </html>

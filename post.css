@@ -1,0 +1,74 @@
+.all-post,
+.create-post {
+    background: #f2f3f5;
+    padding: 20px;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.all-post .card,
+.create-post .card {
+    background: #ffffff;
+    border-radius: 0px;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+.all-post h2,
+.create-post h2 {
+    color: #fa3333;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.all-post button,
+.create-post button {
+    background: #fa3333;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.2s ease-in-out;
+}
+
+.create-post button:hover {
+    background: #bd2f2f;
+}
+
+.create-post input {
+    border-radius: 10px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.create-post textarea {
+    border-radius: 10px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 200px;
+}
+
+.create-post input:focus {
+    border-color: #1b4d17;
+}
+
+.all-post .card h4 {
+    font-size: 22px;
+    color: #333;
+}
+
+.all-post small {
+    font-weight: bold;
+    color: #555;
+}
+
+.post-card {
+    background: #ffffff;
+    padding: 20px;
+    border: 1px solid #e3e3e3;
+    margin-bottom: 10px;
+}
