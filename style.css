@@ -1,0 +1,103 @@
+.all,
+.create-post,
+.create-user,
+.edit-post,
+.edit-user {
+    background: #f2f3f5;
+    padding: 20px;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.all .card,
+.create-post .card,
+.create-user .card {
+    background: #ffffff;
+    border-radius: 0px;
+    padding: 20px;
+}
+
+.all h2,
+.create-post h2,
+.create-user h2,
+.edit-post h2,
+.edit-user h2 {
+    color: #fa3333;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.all button,
+.create-post button,
+.create-user button,
+.edit-post button,
+.edit-user button {
+    background: #fa3333;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.2s ease-in-out;
+}
+
+.all button:hover,
+.create-post button:hover,
+.create-user button:hover,
+.edit-post button:hover,
+.edit-user button:hover {
+    background: #d62b2b;
+}
+
+.title,
+.contant {
+    background: #b4b4b4;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.title label,
+.contant label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #fa3333;
+}
+
+.title input,
+.contant textarea {
+    width: 95%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.user-info,
+.post-info{
+    background: #ffffff;
+    padding: 20px;
+    border: 1px solid #e3e3e3;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.contant textarea {
+    height: 200px;
+}
+
+
+
+.post-actions {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+.post-actions button {
+    padding: 10px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+}
