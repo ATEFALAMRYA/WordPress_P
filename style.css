@@ -1,8 +1,7 @@
 .all,
 .create-post,
 .create-user,
-.edit-post,
-.edit-user {
+.user-post {
     background: #f2f3f5;
     padding: 20px;
     font-family: "Segoe UI", Arial, sans-serif;
@@ -10,7 +9,8 @@
 
 .all .card,
 .create-post .card,
-.create-user .card {
+.create-user .card
+.user-post{
     background: #ffffff;
     border-radius: 0px;
     padding: 20px;
@@ -19,8 +19,7 @@
 .all h2,
 .create-post h2,
 .create-user h2,
-.edit-post h2,
-.edit-user h2 {
+.user-post h2 {
     color: #fa3333;
     font-size: 32px;
     font-weight: bold;
@@ -30,8 +29,7 @@
 .all button,
 .create-post button,
 .create-user button,
-.edit-post button,
-.edit-user button {
+.user-post button {
     background: #fa3333;
     color: white;
     border: none;
@@ -45,8 +43,7 @@
 .all button:hover,
 .create-post button:hover,
 .create-user button:hover,
-.edit-post button:hover,
-.edit-user button:hover {
+.user-post button:hover {
     background: #d62b2b;
 }
 
@@ -84,11 +81,27 @@
     margin-bottom: 10px;
     cursor: pointer;
 }
+
+.edit-box input,
+.edit-box textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: none;
+}
+
+.edit-box textarea {
+    min-height: 120px;
+}
+
+.edit-box button {
+    margin-right: 10px;
+}
+
 .contant textarea {
     height: 200px;
 }
-
-
 
 .post-actions {
     margin-top: 12px;
@@ -101,3 +114,4 @@
     font-size: 14px;
     border-radius: 4px;
 }
+

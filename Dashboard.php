@@ -14,7 +14,7 @@ $user = $_SESSION['user_name'];
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="Dashboard.css?v=13">
+    <link rel="stylesheet" href="Dashboard.css">
 </head>
 <body>
 
@@ -39,21 +39,21 @@ $user = $_SESSION['user_name'];
 <div class="layout">
 
     <div class="sidebar">
-
+ 
         <div class="menu-title">Posts</div>
-        <button onclick="loadContent('./post/create_post.html?v=12')">create post</button>
-        <button onclick="loadContent('./post/all_post.html?v=12')">all posts</button>
+        <button onclick="loadContent('post/create_post.html')">create post</button>
+        <button onclick="loadContent('post/all_post.html')">all posts</button>
 
         <div class="menu-title">Users</div>
-        <button onclick="loadContent('./user/create_user.html?v=1')">create user</button>
-        <button onclick="loadContent('./user/all_user.html?v=1')">all user</button>
-        <button onclick="loadContent('./user/user_post.html?v=132')">user post</button>
+        <button onclick="loadContent('./user/create_user.html')">create user</button>
+        <button onclick="loadContent('./user/all_user.html')">all user</button>
+        <button onclick="loadContent('./user/user_post.html')">user post</button>
 
     </div>
 
     <div class="content content-box" id="content-area">
-        <h2>Welcome to your dashboard</h2>
-        <p>Here you can create and display posts</p>
+        <h2>Welcome to your quick dashboard</h2>
+        <p>Here you can create and display posts and users</p>
     </div>
 
 </div>
