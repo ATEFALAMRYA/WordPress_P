@@ -115,3 +115,23 @@
     border-radius: 4px;
 }
 
+@media (max-width: 768px) {
+
+    .logout-btn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .sidebar button {
+        font-size: 14px;
+        padding: 10px;
+        margin-bottom: 8px;
+    }
+
+    .post-actions button {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+}
