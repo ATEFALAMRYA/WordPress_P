@@ -53,7 +53,7 @@ async function deletePost(id) {
         alertBox.innerHTML = `<div class="alert alert-success">Post Deleted</div>`;
         loadPosts();
     } else {
-        alertBox.innerHTML = `<div class="alert alert-danger">Delete Failed</div>`;
+        alertBox.innerHTML = `<div class="alert alert-error">Delete Failed</div>`;
     }
 }
 
@@ -107,7 +107,7 @@ async function updatePost(id) {
 
     alert.innerHTML = data.id
         ? `<div class="alert alert-success">Post Updated</div>`
-        : `<div class="alert alert-danger">Update Failed</div>`;
+        : `<div class="alert alert-error">Update Failed</div>`;
 
     if (data.id) loadPosts();
 }
@@ -142,5 +142,5 @@ form?.addEventListener("submit", async (e) => {
 
     document.getElementById("alert").innerHTML = data.id
     ? `<div class="alert alert-success">Post Created: ${data.id}</div>`
-    : `<div class="alert alert-danger">Create Failed</div>`;
+    : `<div class="alert alert-error">Create Failed</div>`;
 });
